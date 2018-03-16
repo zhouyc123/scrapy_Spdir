@@ -10,7 +10,7 @@ class QianchengSpiderSpider(CrawlSpider):
     start_urls = ['http://search.51job.com/list/180200%252C010000,000000,0000,00,9,99,python,2,1.html']
 
     rules = (
-        Rule(LinkExtractor(allow=r'http://jobs\.51job\.com/.*/\d+\.html\.*'), callback='parse_item', follow=False),
+        Rule(LinkExtractor(allow=r'http://jobs\.51job\.com/beijing.*/\d+\.html\.*'), callback='parse_item', follow=False),
     )
 
     def parse_item(self, response):
@@ -26,5 +26,5 @@ class QianchengSpiderSpider(CrawlSpider):
 
         #i['name'] = response.xpath('//div[@id="name"]').extract()
         #i['description'] = response.xpath('//div[@id="description"]').extract()
-        print(i)
+        # print(i)
         return i
